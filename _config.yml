@@ -24,21 +24,21 @@ repository               : "John-YuehanZhang/john-yuehanzhang.github.io"
 author:
   # Biographic information
   avatar           : "https://raw.githubusercontent.com/Yuehan717/Yuehan717.github.io/refs/heads/master/assets/images/profile.png"
-  name             : "Zhang Yuehan (张月涵)"
-  pronouns         : "she/her"  
-  bio              : "PhD in Computer Science @NUS"
-  location         : "Singapore"
+  name             : "Yuehan Zhang"
+  pronouns         : "he"  
+  bio              : "RA @USC"
+  location         : "Los Angeles, USA"
   employer         : #""
   uri              : # URL
-  email            : "zhangyuehan789@gmail.com" 
+  email            : "johnzhang514145@gmail.com" 
 
   # Academic websites
   # academia         : # URL
   # arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=m_PCPGYAAAAJ&hl=en"
+  # googlescholar    : "https://scholar.google.com/citations?user=m_PCPGYAAAAJ&hl=en"
   # inspire-hep      : # URL
   # impactstory      : # URL
-  orcid            : "http://orcid.org/0000-0002-5017-0097"
+  orcid            : "https://orcid.org/0009-0008-9255-9798"
   semantic         : # URL
   pubmed           : # URL
   researchgate     : # URL
