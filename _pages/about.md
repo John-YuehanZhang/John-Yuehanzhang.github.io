@@ -18,7 +18,7 @@ My research interests focus on quantum computing, particularly quantum simulatio
 ---
 ## Education
 
-* **Visiting Student & Research Intern at Information Hub** | *The Hong Kong University of Science and Technology (GZ)* | 2025 – 2026
+* **Visiting Student** | *The Hong Kong University of Science and Technology (GZ)* | 2025 – 2026
 
 * **B.Sc. in Cyber Science and Engineering** | *Sichuan University* | 2023 – 2027
 
