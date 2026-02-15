@@ -23,7 +23,7 @@ repository               : "John-YuehanZhang/john-yuehanzhang.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "https://raw.githubusercontent.com/Yuehan717/Yuehan717.github.io/refs/heads/master/assets/images/profile.png"
+  avatar           : "https://raw.githubusercontent.com/Yuehan717/Yuehan717.github.io/refs/heads/master/assets/images/profile.jpg"
   name             : "Yuehan Zhang"
   pronouns         : "he"  
   bio              : "RA @USC"
@@ -48,7 +48,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "Yuehan717"
+  github           : "John-YuehanZhang"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -63,7 +63,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "yuehan-zhang-287326340"
+  linkedin         : # Username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
