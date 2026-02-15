@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Hello😊"
+title                    : "Hello😊 This"
 title_separator          : "-"
 name                     : &name "Yuehan Zhang"
 description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
@@ -24,7 +24,7 @@ repository               : "John-YuehanZhang/John-Yuehanzhang.github.io"
 author:
   # Biographic information
   avatar           : "https://raw.githubusercontent.com/John-YuehanZhang/John-Yuehanzhang.github.io/master/assets/images/profile.jpg"
-  name             : "Yuehan Zhang"
+  name             : "Yuehan Zhang(张越涵)"
   pronouns         : ""  
   bio              : "Bachelor’s Student at SCU, RA at HKUST(GZ)"
   location         : "China"
