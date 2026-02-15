@@ -20,11 +20,11 @@ I am Yuehan Zhang, a bachelor's student at SCU and research assistant at HKUST(G
 
 | Position | Organization | Duration |
 |----------|--------------|----------|
-| **Research Internship** | *The Hong Kong University of Science and Technology (GZ)* | Jul 2025 鈥?Present |
+| **Research Internship** | *The Hong Kong University of Science and Technology (GZ)* | Jul 2025 - Present |
 
 ## Education
 
 | Degree | Institution | Years |
 |--------|-------------|-------|
-| **Visiting Student** | *The Hong Kong University of Science and Technology (GZ)* | 2025 鈥?2026 |
-| **B.Sc. in Cyber Science and Engineering** | *Sichuan University* | 2023 鈥?2027 |
+| **Visiting Student** | *The Hong Kong University of Science and Technology (GZ)* | 2025 - 2026 |
+| **B.Sc. in Cyber Science and Engineering** | *Sichuan University* | 2023 - 2027 |
