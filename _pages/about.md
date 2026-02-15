@@ -13,7 +13,9 @@ My research interests focus on quantum computing, particularly quantum simulatio
 
 ## Experience
 
-* **Research Internship** | *The Hong Kong University of Science and Technology (GZ)* | Jul 2025 – Present
+| Position | Organization | Duration |
+|----------|--------------|----------|
+| **Research Internship** | *The Hong Kong University of Science and Technology (GZ)* | Jul 2025 – Present |
 
 ---
 ## Education
