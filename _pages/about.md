@@ -6,10 +6,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am Yuehan Zhang, a bachelor’s student at SCU and research assistant at HKUST(GZ), specializing in quantum computing simulation and optimization.
+## About Me
 
-## Research Interests
-My research interests focus on quantum computing, particularly quantum simulation and quantum optimization algorithms.
+I am Yuehan Zhang, a bachelor's student at SCU and research assistant at HKUST(GZ). My research interests focus on quantum computing, particularly quantum simulation and quantum optimization algorithms.
 
 ## Experience
 
