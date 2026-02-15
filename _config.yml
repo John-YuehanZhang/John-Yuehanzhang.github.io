@@ -6,59 +6,55 @@
 # `jekyll serve -l -H localhost`. If you change this file, please restart the 
 # server process.
 
-## Basic Site Settings
+# Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Yuehan Zhang"
+site_theme               : "default" # Currently available options are "default", "air"
+title                    : "你好👋/Hello😊"
 title_separator          : "-"
-name                     : &name "Yuehan Zhang"
-description              : &description "Research Intern in Quantum Computing at USC"   # default if not overridden by a page
-url                      : https://john-yuehanzhang.github.io
-baseurl                  : ""
-repository               : "John-YuehanZhang/john-yuehanzhang.github.io"
+name                     : &name "Zhang Yuehan"
+description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+url                      : https://yuehan717.github.io/ # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
+                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
+repository               : "Yuehan717/yuehan717.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
+#               If a field is blank the icon and link will not appear, otherwise it will be shown.
+#               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Yuehan Zhang"
-  pronouns         :
-  bio              : "Research Intern @ USC; Research Interests: Quantum Computing (Quantum Simulation & Quantum Optimization Algorithms)"
-  location         : "Los Angeles, CA, USA"
-  employer         : "University of Southern California (USC)"
-  uri              :
-  email            : "johnzhang514145@gmail.com"
+  avatar           : "https://raw.githubusercontent.com/Yuehan717/Yuehan717.github.io/refs/heads/master/assets/images/profile.jpg"
+  name             : "Zhang Yuehan (张月涵)"
+  pronouns         : "she/her"  
+  bio              : "PhD in Computer Science @NUS"
+  location         : "Singapore"
+  employer         : #""
+  uri              : # URL
+  email            : "zhangyuehan789@gmail.com" 
 
   # Academic websites
-  academia         :
-  arxiv            :
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      :
-  impactstory      :
-  orcid            : "https://orcid.org/0009-0008-9255-9798"
-  semantic         :
-  ssrn             :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     :
-  scopus           :
-  zotero           :
-
-  # Social / code
-  github           : "https://github.com/John-YuehanZhang"
-
-
+  # academia         : # URL
+  # arxiv            : # URL - Update with the correct link to your profile
+  googlescholar    : "https://scholar.google.com/citations?user=m_PCPGYAAAAJ&hl=en"
+  # inspire-hep      : # URL
+  # impactstory      : # URL
+  orcid            : "http://orcid.org/0000-0002-5017-0097"
+  semantic         : # URL
+  pubmed           : # URL
+  researchgate     : # URL
+  scopus           : # URL
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "Yuehan717"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : #"bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -67,7 +63,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "yuehan-zhang-287326340"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -87,10 +83,13 @@ author:
 publication_category:
   books:
     title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'    
   conferences:
     title: 'Conference Papers'
+  journals:
+    title: 'Journal Articles'
+  manuscripts:
+    title: 'Manuscripts'
+
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
@@ -296,14 +295,14 @@ defaults:
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
 
 # Outputting
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
@@ -355,7 +354,7 @@ tag_archive:
 
 
 # HTML Compression
-# - https://jch.penibelst.de/
+# - http://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
