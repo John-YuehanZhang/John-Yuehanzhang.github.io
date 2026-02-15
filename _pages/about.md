@@ -13,16 +13,16 @@ My research interests focus on quantum computing, particularly quantum simulatio
 
 ## Experience
 
-Research Internship | HKUST(GZ) | Jul 2025 – Present
+* **Research Internship** | *The Hong Kong University of Science and Technology (GZ)* | Jul 2025 – Present
   * Research in Quantum Algorithms
 
 ---
 ## Education
 
-* **Visiting Student & Research Intern at Information Hub** | *The Hong Kong University of Science and Technology (GZ), China* | 2025 – 2026
+* **Visiting Student & Research Intern at Information Hub** | *The Hong Kong University of Science and Technology (GZ)* | 2025 – 2026
   * Advisor: Prof. Xin Wang
 
-* **B.Sc. in Cyber Science and Engineering** | *Sichuan University, China* | 2023 – 2027
+* **B.Sc. in Cyber Science and Engineering** | *Sichuan University* | 2023 – 2027
 
 <!-- 
 ## Selected Publications
