@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Yuehan Zhang"
 title_separator          : "-"
 name                     : &name "Yuehan Zhang"
-description              : &description "Research Intern in Quantum Computing at USC"   # default if not overridden by a page
+# description              : &description "Research Intern in Quantum Computing at USC"   # default if not overridden by a page
 url                      : https://john-yuehanzhang.github.io
 baseurl                  : ""
 repository               : "John-YuehanZhang/john-yuehanzhang.github.io"
@@ -22,26 +22,18 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Yuehan Zhang"
-  pronouns         :
+  # pronouns         :
   bio              : "Research Intern @ USC; Research Interests: Quantum Computing (Quantum Simulation & Quantum Optimization Algorithms)"
   location         : "Los Angeles, CA, USA"
-  employer         : "University of Southern California (USC)"
-  uri              :
+  # employer         : "University of Southern California (USC)"
+  # uri              :
   email            : "johnzhang514145@gmail.com"
 
   # Academic websites
-  academia         :
-  arxiv            :
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      :
-  impactstory      :
+
+  # googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+ 
   orcid            : "https://orcid.org/0009-0008-9255-9798"
-  semantic         :
-  ssrn             :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     :
-  scopus           :
-  zotero           :
 
   # Social / code
   github           : "https://github.com/John-YuehanZhang"
