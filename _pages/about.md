@@ -14,8 +14,7 @@ I am Yuehan Zhang, a bachelor's student at SCU and research assistant at HKUST(G
 
 | Authorship | Publication |
 |------------|-------------|
-| Co-first author | [Block Coordinate Descent for Dynamic Portfolio Optimization under Finite-Precision Coherent Ising Machines](https://example.com)<br>Keming He *1, Yuehan Zhang *, Hongshun Yao, and Xin Wang &dagger;1 |
-|  | [Paper Title 2](https://example.com)<br>Yuehan Zhang, Author 2 |
+| Co-first author | [Block Coordinate Descent for Dynamic Portfolio Optimization under Finite-Precision Coherent Ising Machines](https://example.com)<br>Keming He *, Yuehan Zhang *, Hongshun Yao, and Xin Wang &dagger; |
 
 ## Experience
 
