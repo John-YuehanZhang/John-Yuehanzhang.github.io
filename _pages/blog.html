@@ -1,0 +1,12 @@
+---
+layout: archive
+title: "Blog"
+permalink: /blog/
+author_profile: true
+---
+
+<p>Here are my published blog posts and articles. Click on any entry to view or download the full content.</p>
+
+{% for post in site.posts reversed %}
+  {% include archive-single.html %}
+{% endfor %}

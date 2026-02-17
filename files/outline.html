@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<title>Private Deployment of Team Note-Taking Software: Tutorial for Deploying Outline on Ubuntu &#8211; Yuehan Zhang</title>
+<meta name='robots' content='max-image-preview:large' />
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$','$'],['\\(','\\)']], 
+    processEscapes: true
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore|editor-rich-text'
+  }
+};
+
+</script>
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Yuehan Zhang &raquo; Feed" href="https://johnyuehanz.site/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Yuehan Zhang &raquo; Comments Feed" href="https://johnyuehanz.site/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Yuehan Zhang &raquo; Private Deployment of Team Note-Taking Software: Tutorial for Deploying Outline on Ubuntu Comments Feed" href="https://johnyuehanz.site/2025/10/12/private-deployment-of-team-note-taking-software-tutorial-for-deploying-outline-on-ubuntu/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://johnyuehanz.site/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjohnyuehanz.site%2F2025%2F10%2F12%2Fprivate-deployment-of-team-note-taking-software-tutorial-for-deploying-outline-on-ubuntu%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://johnyuehanz.site/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjohnyuehanz.site%2F2025%2F10%2F12%2Fprivate-deployment-of-team-note-taking-software-tutorial-for-deploying-outline-on-ubuntu%2F&#038;format=xml" />
+<style id='wp-img-auto-sizes-contain-inline-css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-block-library-inline-css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style>
+<style id='wp-block-heading-inline-css'>
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id='wp-block-image-inline-css'>
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .close-button{align-items:center;cursor:pointer;display:flex;justify-content:center;min-height:40px;min-width:40px;padding:0;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .close-button:focus,.wp-lightbox-overlay .close-button:hover,.wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:9999999999}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/image/style.min.css */
+</style>
+<style id='wp-block-image-theme-inline-css'>
+:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/image/theme.min.css */
+</style>
+<style id='wp-block-post-author-inline-css'>
+.wp-block-post-author{box-sizing:border-box;display:flex;flex-wrap:wrap}.wp-block-post-author__byline{font-size:.5em;margin-bottom:0;margin-top:0;width:100%}.wp-block-post-author__avatar{margin-right:1em}.wp-block-post-author__bio{font-size:.7em;margin-bottom:.7em}.wp-block-post-author__content{flex-basis:0;flex-grow:1}.wp-block-post-author__name{margin:0}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/post-author/style.min.css */
+</style>
+<style id='wp-block-search-inline-css'>
+.wp-block-search__button{margin-left:10px;word-break:normal}.wp-block-search__button.has-icon{line-height:0}.wp-block-search__button svg{height:1.25em;min-height:24px;min-width:24px;width:1.25em;fill:currentColor;vertical-align:text-bottom}:where(.wp-block-search__button){border:1px solid #ccc;padding:6px 10px}.wp-block-search__inside-wrapper{display:flex;flex:auto;flex-wrap:nowrap;max-width:100%}.wp-block-search__label{width:100%}.wp-block-search.wp-block-search__button-only .wp-block-search__button{box-sizing:border-box;display:flex;flex-shrink:0;justify-content:center;margin-left:0;max-width:100%}.wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper{min-width:0!important;transition-property:width}.wp-block-search.wp-block-search__button-only .wp-block-search__input{flex-basis:100%;transition-duration:.3s}.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden,.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden .wp-block-search__inside-wrapper{overflow:hidden}.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden .wp-block-search__input{border-left-width:0!important;border-right-width:0!important;flex-basis:0;flex-grow:0;margin:0;min-width:0!important;padding-left:0!important;padding-right:0!important;width:0!important}:where(.wp-block-search__input){appearance:none;border:1px solid #949494;flex-grow:1;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;margin-left:0;margin-right:0;min-width:3rem;padding:8px;text-decoration:unset!important;text-transform:inherit}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper){background-color:#fff;border:1px solid #949494;box-sizing:border-box;padding:4px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input{border:none;border-radius:0;padding:0 4px}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) .wp-block-search__input:focus{outline:none}:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) :where(.wp-block-search__button){padding:4px 8px}.wp-block-search.aligncenter .wp-block-search__inside-wrapper{margin:auto}.wp-block[data-align=right] .wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper{float:right}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/search/style.min.css */
+</style>
+<style id='wp-block-search-theme-inline-css'>
+.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/search/theme.min.css */
+</style>
+<style id='wp-block-site-tagline-inline-css'>
+.wp-block-site-tagline{box-sizing:border-box}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/site-tagline/style.min.css */
+</style>
+<style id='wp-block-code-inline-css'>
+.wp-block-code{box-sizing:border-box}.wp-block-code code{
+  /*!rtl:begin:ignore*/direction:ltr;display:block;font-family:inherit;overflow-wrap:break-word;text-align:initial;white-space:pre-wrap
+  /*!rtl:end:ignore*/}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/code/style.min.css */
+</style>
+<style id='wp-block-code-theme-inline-css'>
+.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/code/theme.min.css */
+</style>
+<style id='wp-block-paragraph-inline-css'>
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://johnyuehanz.site/wp-includes/blocks/paragraph/style.min.css */
+</style>
+
+<style id='classic-theme-styles-inline-css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='google-font-css' href='https://fonts.googleapis.com/css?family=K2D%3A300%2C400%2C500%2C600%2C700%7CRoboto%3A400%2C500%2C700%7CJost%3A400%2C500%2C700&#038;display=swap&#038;ver=6.9.1' media='all' />
+<link rel='stylesheet' id='fontawesome-css' href='https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/font-awesome/css/all.css?ver=4.7' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/bootstrap/css/bootstrap.css?ver=4.0.0' media='all' />
+<link rel='stylesheet' id='fancybox-css' href='https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/fancybox/jquery.fancybox.css?ver=3.5.6' media='all' />
+<link rel='stylesheet' id='owl-carousel-css' href='https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/owl-carousel/assets/animate.css?ver=3.5.6' media='all' />
+<link rel='stylesheet' id='owl-animate-css' href='https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/owl-carousel/assets/owl.carousel.css?ver=3.5.6' media='all' />
+<link rel='stylesheet' id='aos-next-css' href='https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/aos-next/aos.css?ver=6.9.1' media='all' />
+<link rel='stylesheet' id='personal-cv-resume-css-css' href='https://johnyuehanz.site/wp-content/themes/personal-cv-resume/assets/css/personal-cv-resume.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://johnyuehanz.site/wp-includes/css/dashicons.min.css?ver=6.9.1' media='all' />
+<link rel='stylesheet' id='personal-cv-resume-style-css' href='https://johnyuehanz.site/wp-content/themes/personal-cv-resume/style.css?ver=6.9.1' media='all' />
+<link rel='stylesheet' id='lightbox-css' href='https://johnyuehanz.site/wp-content/plugins/markup-markdown/assets/lightbox2/css/lightbox.min.css?ver=2.11.4' media='all' />
+<script src="https://johnyuehanz.site/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="https://johnyuehanz.site/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://johnyuehanz.site/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://johnyuehanz.site/wp-json/wp/v2/posts/44" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://johnyuehanz.site/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9.1" />
+<link rel="canonical" href="https://johnyuehanz.site/2025/10/12/private-deployment-of-team-note-taking-software-tutorial-for-deploying-outline-on-ubuntu/" />
+<link rel='shortlink' href='https://johnyuehanz.site/?p=44' />
+<link rel="pingback" href="https://johnyuehanz.site/xmlrpc.php"></head>
+
+<body class="wp-singular post-template-default single single-post postid-44 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-personal-cv-resume">
+<div id="page" class="site">
+
+<a class="skip-link screen-reader-text" href="#primary">Skip to content</a>		<div id="aside-nav-wrapper" class="fixed">
+			<button class="side-bar-icon" id="sidebar-actions-header">
+	            <span></span>
+	            <span></span>
+	            <span></span>
+	        </button>
+			<div class="header-wrap">
+				<div class="logo-wrap profile-wrp"><div class="wp-header-image" style="background-image: url(https://johnyuehanz.site/wp-content/themes/personal-cv-resume/assets/image/custom-header.jpg);background-size:cover"></div><div class="my-photo"><a href="https://johnyuehanz.site/" class="custom-logo-link" rel="home"><img width="1433" height="1433" src="https://johnyuehanz.site/wp-content/uploads/2026/02/cropped-profile.jpg" class="custom-logo" alt="Yuehan Zhang" /></a></div></div><div class="branding-text"><h3><a href="https://johnyuehanz.site/" rel="home" class="site-title">Yuehan Zhang</a></h3><div class="site-description">Contact me: johnzhang514145@gmail.com</div></div>				       <nav id="navbar" class="navbar-fill">
+			
+		<ul class="emart-main-menu navigation-menu"><li class="page_item page-item-13"><a href="https://johnyuehanz.site/life-update/">Life update</a></li>
+</ul>
+		
+		</nav>
+					</div>
+		</div>
+			<div id="fly-sidebar"> 
+        <button class="side-bar-icon" id="sidebar-actions">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <div class="sidewrapper sidenav">
+        	<section id="block-2" class="widget widget_block widget_search"><form role="search" method="get" action="https://johnyuehanz.site/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"    ><label class="wp-block-search__label" for="wp-block-search__input-1" >Search</label><div class="wp-block-search__inside-wrapper" ><input class="wp-block-search__input" id="wp-block-search__input-1" placeholder="" value="" type="search" name="s" required /><button aria-label="Search" class="wp-block-search__button wp-element-button" type="submit" >Search</button></div></form></section><section id="block-3" class="widget widget_block"></section>
+        </div>
+    </div>    
+    
+
+<div id="content" class="site-content"  >
+<div id="primary" class="content-area container">
+        				<div class="row"><div class="col-md-12 bcf-main-content">
+	   					<main id="main" class="site-main">	
+
+		
+<article id="post-44" class="content-post-wrap post-44 post type-post status-publish format-standard hentry category-cyber-science" data-aos="fade-up">
+
+ 	     <div class="post">
+    	
+		<div class="post-meta-wrap"><ul class="post-meta d-flex align-items-center"><li class="post-by"> <span>By - </span><a href="https://johnyuehanz.site/author/admin/">Yuehan Zhang</a></li><li class="meta date posted-on">Posted on <time class="entry-date published" datetime="2025-10-12T13:09:07+08:00" content="2025-10-12">2025-10-12</time><time class="updated" datetime="2025-10-18T22:01:43+08:00">2025-10-18</time></li><li class="meta category">Posted in <a href="https://johnyuehanz.site/category/cyber-science/" rel="category tag">Cyber science</a></li></ul></div><h2 class="entry-title">Private Deployment of Team Note-Taking Software: Tutorial for Deploying Outline on Ubuntu</h2><div class="content-wrap"><h2 class="wp-block-heading">Summary</h2>
+<p>With the growing demand for team collaboration, building self-hosted code hosting and knowledge base systems has become a practical need for many individuals and teams—such systems can better ensure data privacy, support personalized configurations, and adapt to collaboration modes in different scenarios. This document provides a detailed, step-by-step guide to deploying Forgejo (a code hosting platform) and Outline (a knowledge base tool) on an Ubuntu server, covering everything from basic environment preparation (e.g., purchasing ECS and domain names, installing Docker, Nginx, and PostgreSQL) to advanced configurations (e.g., setting up multi-login options via Forgejo and Microsoft Azure). Whether you are a developer, operation and maintenance personnel, or team manager who needs to build self-hosted collaboration tools, you can complete the entire deployment smoothly by following the steps, and finally obtain a customizable code hosting and knowledge management system to support internal team collaboration.</p>
+<h2 class="wp-block-heading">0.Buy a Elastic Compute Service and domain name</h2>
+<p><strong>If you already have an Ubuntu server and a domain name, you can skip this section.</strong></p>
+<p><strong>This article uses an Alibaba Cloud ECS (Elastic Compute Service). You can also choose other platforms, such as Amazon EC2 (Elastic Compute Cloud). First, you need to purchase a domain name on your selected platform. The specific process will not be repeated here as it is relatively simple. After purchasing the domain name, you need to add a DNS record for it, which means associating your domain name with your server&#8217;s IP address. Please refer to the image for the relevant operations.</strong></p>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="502" src="http://106.55.147.46/wp-content/uploads/2025/10/image-3-1024x502.png" alt="" class="wp-image-59" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-3-1024x502.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-3-300x147.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-3-768x376.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-3-1536x753.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-3-2048x1004.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="951" height="915" src="http://106.55.147.46/wp-content/uploads/2025/10/image-5.png" alt="" class="wp-image-61" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-5.png 951w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-5-300x289.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-5-768x739.png 768w" sizes="(max-width: 951px) 100vw, 951px" /></figure>
+<p><strong>Next, we need to download the SSL certificate. For the download process on the Alibaba Cloud platform, you can refer to this article: <a href="https://help.aliyun.com/zh/ssl-certificate/user-guide/download-an-ssl-certificate?spm=a2c4g.11186623.0.i3">https://help.aliyun.com/zh/ssl-certificate/user-guide/download-an-ssl-certificate?spm=a2c4g.11186623.0.i3</a></strong></p>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="568" src="http://106.55.147.46/wp-content/uploads/2025/10/image-6-1024x568.png" alt="" class="wp-image-63" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-6-1024x568.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-6-300x166.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-6-768x426.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-6-1536x852.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-6-2048x1136.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<p><strong>After these files are downloaded, you will get two files. You need to rename them to ssl.key and ssl.pem respectively.</strong></p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="335" src="http://106.55.147.46/wp-content/uploads/2025/10/image-7-1024x335.png" alt="" class="wp-image-64" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-7-1024x335.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-7-300x98.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-7-768x251.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-7.png 1119w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<p><strong>Next, upload these two files to the following paths on the Ubuntu server:<br>/etc/nginx/cert/ssl.key<br>/etc/nginx/cert/ssl.pem<br>If this path does not exist, simply create a new folder named /etc/nginx/cert yourself.</strong></p>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="564" height="267" src="http://106.55.147.46/wp-content/uploads/2025/10/image-8.png" alt="" class="wp-image-65" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-8.png 564w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-8-300x142.png 300w" sizes="auto, (max-width: 564px) 100vw, 564px" /></figure>
+<h2 class="wp-block-heading">1.Install Docker</h2>
+<pre class="wp-block-code"><code>sudo apt install -y python3 python3-pip 
+
+sudo pip3 install docker-compose</code></pre>
+<h2 class="wp-block-heading">2.Verify if Docker is installed successfully</h2>
+<pre class="wp-block-code"><code>docker-compose --version</code></pre>
+<h2 class="wp-block-heading">3.Deploy Forgejo</h2>
+<pre class="wp-block-code"><code>mkdir forgejo</code></pre>
+<p><strong>Write a <code>docker-compose</code> file: In the <code>forgejo</code> folder, create a file named <code>forgejo.yaml</code> with the following content. Please copy it directly.</strong></p>
+<pre class="wp-block-code"><code>networks:
+  forgejo:
+    external: false
+services:
+  server:
+    image: codeberg.org/forgejo/forgejo:9
+    container_name: forgejo
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    networks:
+      - forgejo
+    volumes:
+      - /data/forgejo:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - &#039;3002:3000&#039;
+      - &#039;222:22&#039;</code></pre>
+<h2 class="wp-block-heading">4.Start Forgejo Service</h2>
+<pre class="wp-block-code"><code>docker-compose -f forgejo.yaml up -d</code></pre>
+<h2 class="wp-block-heading">5.Use Forgejo and Microsoft azure</h2>
+<pre class="wp-block-code"><code>sudo ufw allow 3002/tcp 
+
+sudo ufw allow 3002/udp 
+
+sudo ufw statu</code></pre>
+<p><strong>Access it in the browser via the internal network http://IP:3002. For example, mine is http://10.6.158.157:3002. You need to set your own password and complete a series of registration procedures. Then you’ll reach this page.</strong></p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="565" src="http://106.55.147.46/wp-content/uploads/2025/10/image-1024x565.png" alt="" class="wp-image-47" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-1024x565.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-300x165.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-768x424.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-1536x847.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image.png 1860w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<p><strong>Click the avatar in the upper right corner, then click Settings.</strong></p>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="462" height="798" src="http://106.55.147.46/wp-content/uploads/2025/10/image-1.png" alt="" class="wp-image-48" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-1.png 462w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-1-174x300.png 174w" sizes="auto, (max-width: 462px) 100vw, 462px" /></figure>
+<p><strong>Click on Applications, then click Create Application. Complete a series of registration procedures, and record all IDs and passwords. It is recommended that you take a screenshot to save them. After clicking the &#8220;Create&#8221; button, the page will display the Client ID and Client Secret. Immediately copy these two pieces of information and save them in a notepad (because the Client Secret will disappear after refreshing the page, and it will be needed for subsequent Outline configuration).</strong></p>
+<p><strong>Change the &#8220;Redirect URL&#8221; to: http://your-ip:13090/auth/oidc.callback</strong></p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="517" src="http://106.55.147.46/wp-content/uploads/2025/10/image-2-1024x517.png" alt="" class="wp-image-49" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-2-1024x517.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-2-300x151.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-2-768x388.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-2-1536x775.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-2-2048x1034.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<p>Next, I have also set up a login option using Microsoft&#8217;s cloud services. So now I have two login options. If you only need the previous one, you can ignore the following deployment of the Microsoft option.</p>
+<p>First, you need to log in to this URL: <a href="https://portal.azure.com/" target="_blank" rel="noreferrer noopener">https://portal.azure.com/</a>, and register your own account. Then click the three horizontal lines in the top-left corner.</p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="525" src="http://106.55.147.46/wp-content/uploads/2025/10/image-11-1024x525.png" alt="" class="wp-image-72" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-11-1024x525.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-11-300x154.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-11-768x393.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-11-1536x787.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-11-2048x1049.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<p>Then, click Microsoft entra ID</p>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="347" height="296" src="http://106.55.147.46/wp-content/uploads/2025/10/image-12.png" alt="" class="wp-image-73" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-12.png 347w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-12-300x256.png 300w" sizes="auto, (max-width: 347px) 100vw, 347px" /></figure>
+<p>Then, Manage and App registrations</p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="685" src="http://106.55.147.46/wp-content/uploads/2025/10/image-13-1024x685.png" alt="" class="wp-image-74" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-13-1024x685.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-13-300x201.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-13-768x514.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-13.png 1233w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<p>Then, New registrations</p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="557" src="http://106.55.147.46/wp-content/uploads/2025/10/image-14-1024x557.png" alt="" class="wp-image-76" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-14-1024x557.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-14-300x163.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-14-768x418.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-14.png 1295w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<p><strong>Platform: web</strong></p>
+<p><strong>Redirect URL: <a href="https://quairnote.cn:13090/auth/azure.callback">https://your domain or ip:13090/auth/azure.callback</a></strong></p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="628" src="http://106.55.147.46/wp-content/uploads/2025/10/image-15-1024x628.png" alt="" class="wp-image-77" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-15-1024x628.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-15-300x184.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-15-768x471.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-15.png 1359w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<p><strong>Create your secret and remember the value immediately.</strong></p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="263" src="http://106.55.147.46/wp-content/uploads/2025/10/image-16-1024x263.png" alt="" class="wp-image-78" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-16-1024x263.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-16-300x77.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-16-768x197.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-16-1536x394.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-16-2048x525.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<p><strong>This ID and Secret are the Microsoft-related information you need to fill in the Docker .env file later. Once the Secret is generated, you must record it immediately, as it will not be displayed again afterwards.(It&#8217;s value, not Secret ID)</strong></p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="362" src="http://106.55.147.46/wp-content/uploads/2025/10/image-17-1024x362.png" alt="" class="wp-image-79" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-17-1024x362.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-17-300x106.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-17-768x272.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-17-1536x543.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-17.png 1748w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<h2 class="wp-block-heading">6.Install Nginx on the server<br></h2>
+<pre class="wp-block-code"><code>sudo apt update
+
+sudo apt install nginx
+
+sudo systemctl start nginx
+
+sudo systemctl enable nginx
+
+sudo systemctl status nginx</code></pre>
+<p><strong>Add a configuration file in the /etc/nginx/ nginx.conf</strong></p>
+<p><strong>Enter the sites-enabled directory and create a new configuration file, for example, named nginx.conf.</strong></p>
+<p><strong>You need to change the server_name to your own registered domain name.</strong></p>
+<pre class="wp-block-code"><code>user root; 
+worker_processes auto;
+pid /run/nginx.pid;
+error_log /var/log/nginx/error.log warn;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+    worker_connections 1024;
+    multi_accept on;
+}
+
+http {
+
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+    types_hash_max_size 2048;
+
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 1d;
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    gzip on;
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_comp_level 6;
+    gzip_buffers 16 8k;
+    gzip_http_version 1.1;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
+
+    server {
+        listen 13090 ssl;
+        server_name ?;  
+
+        ssl_certificate /etc/nginx/cert/ssl.pem;
+        ssl_certificate_key /etc/nginx/cert/ssl.key;
+
+        add_header Strict-Transport-Security &quot;max-age=31536000; includeSubDomains&quot; always;
+        add_header X-Content-Type-Options nosniff;
+        add_header X-Frame-Options SAMEORIGIN;
+        add_header X-XSS-Protection &quot;1; mode=block&quot;;
+
+        location / {
+            proxy_pass http://outline:3000; 
+
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme; 
+            proxy_set_header X-Forwarded-Port $server_port;
+
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection &quot;upgrade&quot;;
+
+            proxy_connect_timeout 300s;
+            proxy_read_timeout 300s;
+            proxy_send_timeout 300s;
+        }
+
+    }
+
+    server {
+        listen 80;
+        server_name ?;
+
+        return 301 https://$host:13090$request_uri;
+    }
+}
+
+</code></pre>
+<p><strong>Need to restart the Nginx service to make the new configuration take effect.</strong></p>
+<pre class="wp-block-code"><code>sudo systemctl restart nginx</code></pre>
+<h2 class="wp-block-heading">7.Install the PostgreSQL server and client:</h2>
+<p><strong>Execute the command to install</strong></p>
+<pre class="wp-block-code"><code>sudo apt install postgresql postgresql-contrib</code></pre>
+<p><strong>Create a database user</strong></p>
+<p><strong>Use the <code>CREATE USER</code> statement to create a user named <code>outline</code> and set the password to <code>password</code>. The command is as follows:</strong></p>
+<pre class="wp-block-code"><code>CREATE USER outline WITH PASSWORD &#039;password&#039;;</code></pre>
+<p><strong>Create a database</strong></p>
+<p><strong>Use the <code>CREATE DATABASE</code> statement to create a database named <code>outline</code>. The command is as follows:</strong></p>
+<pre class="wp-block-code"><code>CREATE DATABASE outline;</code></pre>
+<p>Grant user permissions on the database</p>
+<p>Grant all permissions on the database <code>outline</code> to the user <code>outline</code> so that the user can connect to and operate this database. The command is as follows:</p>
+<p>GRANT ALL PRIVILEGES ON DATABASE outline TO outline;</p>
+<h2 class="wp-block-heading">8.Configure the Outline file.</h2>
+<p>Create a file named <code>docker.env</code> in the <code>outline</code> folder. Please write your own IP address or domain name, as well as your own <strong>CLIENT ID</strong> and <strong>SECRET</strong> in it.</p>
+<pre class="wp-block-code"><code># &ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash; REQUIRED &ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;
+
+# Generate a 32-byte random key encoded in hexadecimal. You should use `openssl rand -hex 32` in your terminal to generate a random value.
+
+SECRET_KEY=00075933fd85083d8037964fa8e5539088251e9b8722bdffeb732f57a32e929d
+
+# Generate a 32-byte random key encoded in hexadecimal. You should use `openssl rand -hex 32` in your terminal to generate a random value.
+
+UTILS_SECRET=e35305f201b6556e24c8c2c88e4e24c1be5625273ec0d3bd4e0aa18393d7d065
+
+# database
+
+DATABASE_URL=postgres://outline:password@postgres:5432/outline
+DATABASE_URL_TEST=postgres://outline:password@postgres:5432/outline_test
+DATABASE_CONNECTION_POOL_MIN=0
+DATABASE_CONNECTION_POOL_MAX=10
+
+# Uncomment to disable SSL connection to Postgres
+PGSSLMODE=disable
+
+# For Redis, you can specify an ioredis-compatible URL like this
+# Here, &quot;redis&quot; is the default hostname of the database container created above; a separate network needs to be established or --link used
+REDIS_URL=redis://outline-redis-1:6379
+# Alternatively, if you want to provide additional connection options,
+# use a base64-encoded JSON connection options object. Refer to the ioredis documentation for a list of available options.
+# Example: Using Redis Sentinel for high availability
+# {&quot;sentinels&quot;:[{&quot;host&quot;:&quot;sentinel-0&quot;,&quot;port&quot;:26379},{&quot;host&quot;:&quot;sentinel-1&quot;,&quot;port&quot;:26379}],&quot;name&quot;:&quot;mymaster&quot;}
+#REDIS_URL=ioredis://eyJzZW50aW5lbHMiOlt7Imhvc3QiOiJzZW50aW5lbC0wIiwicG9ydCI6MjYzNzl9LHsiaG9zdCI6InNlbnRpbmVsLTEiLCJwb3J0IjoyNjM3OX1dLCJuYW1lIjoibXltYXN0ZXIifQ==
+
+URL=https://ip or domain name:13090/
+PORT=3000
+
+# don&#039;t change this line
+COLLABORATION_URL=
+
+# A more detailed guide on setting up S3 is available here:
+# =&gt; https://wiki.generaloutline.com/share/125de1cc-9ff6-424b-8415-0d58c809a40f
+# AWS_ACCESS_KEY_ID corresponds to MINIO_ROOT_USER above
+# AWS_SECRET_ACCESS_KEY corresponds to MINIO_ROOT_PASSWORD above
+# AWS_REGION corresponds to MINIO_REGION_NAME above
+# AWS_S3_UPLOAD_BUCKET_URL is the API address of MINIO; note that this is the API address, not the management address
+
+AWS_ACCESS_KEY_ID=6m2lx2ffmbr9ikod
+AWS_SECRET_ACCESS_KEY=2k78fpraq7rs5xlrti5p6cvb767a691h3jqi47ihbu75cx23twkzpok86sf1aw1e
+AWS_REGION=cn-homelab-1
+AWS_S3_ACCELERATE_URL=
+AWS_S3_UPLOAD_BUCKET_URL=https://quairnote.cn:9000
+AWS_S3_UPLOAD_BUCKET_NAME=outline
+AWS_S3_UPLOAD_MAX_SIZE=26214400
+AWS_S3_FORCE_PATH_STYLE=true
+AWS_S3_ACL=private
+
+# &ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash; Authentication &ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;
+
+# Third-party login credentials. A working installation requires at least one of Google, Slack, or Microsoft; otherwise, you will have no login options.
+
+# Slack
+# =&gt; https://api.slack.com/apps
+# When configuring the Client ID, add the redirect URL under &quot;OAuth &amp; Permissions&quot;:
+# https://&lt;URL&gt;/auth/slack.callback
+# SLACK_KEY=
+# SLACK_SECRET=
+
+# # To configure Google authentication, you need to create an OAuth client ID at the following location:
+# =&gt; https://console.cloud.google.com/apis/credentials
+#
+# When configuring the Client ID, add the Authorized redirect URI:
+# https://&lt;URL&gt;/auth/google.callback
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# To configure Microsoft/Azure authentication, you need to create an OAuth client.
+# Refer to the guide for detailed information on setting up an Azure application:
+# =&gt; https://wiki.generaloutline.com/share/dfa77e56-d4d2-4b51-8ff8-84ea6608faa4
+AZURE_CLIENT_ID=your id
+AZURE_CLIENT_SECRET=your secret
+AZURE_RESOURCE_APP_ID=00000003-0000-0000-c000-000000000000
+
+# To configure generic OIDC authentication, you need an identity provider (IdP) of some kind.
+# The redirect URI is https://&lt;URL&gt;/auth/oidc.callback
+
+OIDC_CLIENT_ID = your id
+OIDC_CLIENT_SECRET=your secret
+OIDC_AUTH_URI=http://your ip:3002/login/oauth/authorize
+OIDC_TOKEN_URI=http://your ip:3002/login/oauth/access_token
+OIDC_USERINFO_URI=http://your ip:3002/login/oauth/userinfo
+
+# OIDC_USERNAME_CLAIM=preferred_username
+
+# OIDC_DISPLAY_NAME=OIDC
+
+# OIDC_SCOPES=openid profile email
+
+# &ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash; 可选 &ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;
+
+# This is only required if you do not use an external reverse proxy. See documentation:
+# https://wiki.generaloutline.com/share/1c922644-40d8-41fe-98f9-df2b67239d45
+SSL_KEY=
+SSL_CERT=
+
+# If using a Cloudfront/Cloudflare distribution or similar it can be set below.
+# This will cause paths to javascript, stylesheets, and images to be updated to
+# the hostname defined in CDN_URL. In your CDN configuration the origin server
+# should be set to the same as URL.
+CDN_URL=
+
+# Automatically redirect to HTTPS in production.
+# The default value is true, but it can be set to false if you can ensure SSL termination at an external load balancer.
+
+FORCE_HTTPS=true
+
+# Allow installers to check for updates by sending anonymous statistics to the maintainers
+ENABLE_UPDATES=false
+
+# How many processes should be spawned. As a reasonable rule of thumb, divide the server&#039;s available memory by 512 for a rough estimate
+WEB_CONCURRENCY=4
+
+# If you have particularly large Word documents with embedded images, you may need to override the maximum size for document imports
+MAXIMUM_IMPORT_SIZE=5120000
+
+# If your reverse proxy already logs incoming HTTP requests and results in duplicates, this line can be removed
+DEBUG=http
+
+# Comma-separated list of domains allowed to log in to the wiki. If not set, all domains are allowed by default when logging in with Google OAuth
+ALLOWED_DOMAINS=
+
+# For full integration with search and posting to channels, the following configuration is also required, with more details available at
+# =&gt; https://wiki.generaloutline.com/share/be25efd1-b3ef-4450-b8e5-c4a4fc11e02a
+#
+# SLACK_VERIFICATION_TOKEN=your_token
+# SLACK_APP_ID=A0XXXXXXX
+# SLACK_MESSAGE_ACTIONS=true
+
+# Google Analytics can also be optionally enabled to track page views in the knowledge base
+GOOGLE_ANALYTICS_ID=
+
+# Optionally enable Sentry (Sentry.io) to track errors and performance
+SENTRY_DSN=
+
+# To support sending outgoing transactional emails such as &quot;Document Updated&quot; or &quot;You&#039;ve Been Invited&quot;, you need to provide authentication for the SMTP server
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USERNAME=
+SMTP_PASSWORD=
+SMTP_FROM_EMAIL=
+SMTP_REPLY_EMAIL=
+SMTP_TLS_CIPHERS=
+SMTP_SECURE=true
+
+# Custom logo displayed on the authentication screen, scaled to height: 60px
+# TEAM_LOGO=https://example.com/images/logo.png
+
+# Default interface language. See translate.getoutline.com for a list of available language codes and their approximate translation percentages.Change it.
+DEFAULT_LANGUAGE=zh_CN</code></pre>
+<p>Create a file named <code>docker-compose.yml</code> in the <code>outline</code> folder, and do not modify anything in this file.</p>
+<pre class="wp-block-code"><code>services:
+  outline:
+    image: outlinewiki/outline:0.82.0 
+    env_file: ./docker.env
+    ports:
+      - &quot;3000:3000&quot;  
+    expose:
+      - &quot;3000&quot;
+    volumes:
+      - storage-data:/var/lib/outline/data
+    depends_on:
+      - postgres
+      - redis
+
+  redis:
+    image: redis
+    env_file: ./docker.env
+    expose:
+      - &quot;6379&quot;
+    volumes:
+      - ./redis.conf:/redis.conf
+    command: [&quot;redis-server&quot;, &quot;/redis.conf&quot;]
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;redis-cli&quot;, &quot;ping&quot;]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+
+  postgres:
+    image: postgres
+    env_file: ./docker.env
+    expose:
+      - &quot;5432&quot;
+    volumes:
+      - database-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;pg_isready&quot;, &quot;-d&quot;, &quot;outline&quot;, &quot;-U&quot;, &quot;user&quot;]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    environment:
+      POSTGRES_USER: &#039;outline&#039;
+      POSTGRES_PASSWORD: &#039;password&#039;
+      POSTGRES_DB: &#039;outline&#039;
+
+volumes:
+  storage-data:
+  database-data:
+</code></pre>
+<p>Start the dependent services (Postgres + Redis) in the outline folder: Execute the command in the deployment folder:</p>
+<pre class="wp-block-code"><code>docker compose up -d postgres redis</code></pre>
+<p>Start the Outline service in the outline folder: Execute the command:</p>
+<p>docker compose up -d outline</p>
+<h2 class="wp-block-heading">9.Try it</h2>
+<p>Then you need to access https://your domain name:13090/ in your browser.<br></p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="500" src="http://106.55.147.46/wp-content/uploads/2025/10/image-9-1024x500.png" alt="" class="wp-image-68" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-9-1024x500.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-9-300x146.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-9-768x375.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-9-1536x750.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-9-2048x1000.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="504" src="http://106.55.147.46/wp-content/uploads/2025/10/image-18-1024x504.png" alt="" class="wp-image-82" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-18-1024x504.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-18-300x148.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-18-768x378.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-18-1536x755.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-18-2048x1007.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="893" height="237" src="http://106.55.147.46/wp-content/uploads/2025/10/image-10.png" alt="" class="wp-image-69" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-10.png 893w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-10-300x80.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-10-768x204.png 768w" sizes="auto, (max-width: 893px) 100vw, 893px" /></figure>
+<h2 class="wp-block-heading">10.How to create new user through OIDC</h2>
+<p>First, enter this page: http://your-ip:3002</p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="569" src="https://106.55.147.46/wp-content/uploads/2025/10/image-19-1024x569.png" alt="" class="wp-image-110" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-19-1024x569.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-19-300x167.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-19-768x427.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-19-1536x854.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-19-2048x1138.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="567" src="https://106.55.147.46/wp-content/uploads/2025/10/image-20-1024x567.png" alt="" class="wp-image-111" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-20-1024x567.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-20-300x166.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-20-768x425.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-20-1536x850.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-20-2048x1133.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="538" src="https://106.55.147.46/wp-content/uploads/2025/10/image-21-1024x538.png" alt="" class="wp-image-112" srcset="https://johnyuehanz.site/wp-content/uploads/2025/10/image-21-1024x538.png 1024w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-21-300x158.png 300w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-21-768x403.png 768w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-21-1536x807.png 1536w, https://johnyuehanz.site/wp-content/uploads/2025/10/image-21-2048x1076.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<div class="wp-block-post-author"><div class="wp-block-post-author__avatar"><img loading="lazy" decoding="async" alt="" src="https://secure.gravatar.com/avatar/d6683a4d754e1836ca51137c3144cfb0ce071c46d677c7510cfd45a5214c8c92?s=48&amp;d=mm&amp;r=g" class="avatar avatar-48 photo" height="48" width="48"></div></div>
+<div class="wp-block-post-author__content"><p class="wp-block-post-author__name">Yuehan Zhang</p></div>
+<p class="wp-block-site-tagline">Contact me: johnzhang514145@gmail.com</p>
+<p></p></div>      
+       
+    </div>
+    
+</article><!-- #post-44 -->
+<div class="single-prev-next container"><div class="row align-items-center"><div class="col-md-6 col-sm-6"><div class="row align-items-center"><div class="col-md-9 ml-auto align-right"><h5>Next Article</h5><a href="https://johnyuehanz.site/2025/11/17/decoded-quantum-interferometry-for-the-max-xorsat-problem/" rel="next"><span>Decoded Quantum Interferometry for the max-XORSAT Problem</span></a></div></div></div></div></div>
+<div id="comments" class="comments-area " >
+
+	         <div class="details-page-inner-box comment-form mt-70">
+   		 	<div id="respond" class="comment-respond">
+		 <h4 class="custom-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2025/10/12/private-deployment-of-team-note-taking-software-tutorial-for-deploying-outline-on-ubuntu/#respond" style="display:none;">Cancel reply</a></small></h4><form action="https://johnyuehanz.site/wp-comments-post.php" method="post" id="commentform" class="row"><p class="comment-notes col-12">Your email address will not be published. Required fields are marked *.</p><div class="col-xl-4 col-lg-6 col-md-4 col-12"><input id="author" placeholder="Your Name" name="author" type="text" value="" size="30" /><span class="required">*</span></div>
+<div class="col-xl-4 col-lg-6 col-md-4 col-12"><input id="email" placeholder="Your Email" name="email" type="text" value="" size="30" /><span class="required">*</span></div>
+<div class="col-xl-4 col-lg-6 col-md-4 col-12"><input id="url" name="url" placeholder="Website" type="text" value="" size="30" /> </div>
+<div class="col-12"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"  placeholder="Comment"></textarea></div><p class="comment-form-cookies-consent col-12"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" class="fas fa-check" type="checkbox" value="yes" /><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><button type="submit" class="theme-btn" id="submit-new"><span>Post Comment</span></button> <input type='hidden' name='comment_post_ID' value='44' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+	    </div>
+
+</div><!-- #comments -->
+
+</main>
+	   			</div></div></div></div><!-- #content -->
+
+	 <footer id="colophon" class="site-footer"><div class="site_info"><div class="container text-center"><a id="backToTop" class="ui-to-top active"><i class="icofont-rounded-up parallax"></i></a><div class="text">Copyright &copy; 2026 Yuehan Zhang. All Right Reserved.<span class="dev_info">Theme : <a href="https://wordpress.org/themes/personal-cv-resume/" target="_blank" rel="nofollow">Personal CV Resume</a> By <a href="https://athemeart.com/" target="_blank" rel="nofollow">aThemeArt</a></span></div></div></div></footer></div><!-- #page -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/personal-cv-resume/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js?ver=6.9.1" id="mathjax-js"></script>
+<script src="https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/bootstrap/js/bootstrap.js?ver=20151215" id="bootstrap-js-js"></script>
+<script src="https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/fancybox/jquery.fancybox.js?ver=6.9.1" id="fancybox-js-js"></script>
+<script src="https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/owl-carousel/owl.carousel.js?ver=6.9.1" id="owl-carousel-js-js"></script>
+<script src="https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/aos-next/aos.js?ver=6.9.1" id="aos-next-js-js"></script>
+<script src="https://johnyuehanz.site/wp-content/themes/personal-cv-resume/vendors/slimscroll/jquery.slimscroll.js?ver=6.9.1" id="slimscroll-js"></script>
+<script src="https://johnyuehanz.site/wp-content/themes/personal-cv-resume/assets/js/personal-cv-resume.js?ver=1.0.3" id="personal-cv-resume-js-js"></script>
+<script src="https://johnyuehanz.site/wp-includes/js/comment-reply.min.js?ver=6.9.1" id="comment-reply-js" async data-wp-strategy="async" fetchpriority="low"></script>
+<script src="https://johnyuehanz.site/wp-content/plugins/markup-markdown/assets/lightbox2/js/lightbox.min.js?ver=2.11.4" id="lightbox-js"></script>
+
+</body>
+</html>
