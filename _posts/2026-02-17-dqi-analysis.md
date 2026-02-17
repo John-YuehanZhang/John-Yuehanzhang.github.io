@@ -4,4 +4,4 @@ permalink: /blog/dqi-analysis/
 layout: single
 ---
 
-{% include_relative ../files/dqi.html %}
+[查看详细分析](../files/dqi.ipynb)
