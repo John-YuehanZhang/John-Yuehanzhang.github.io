@@ -1,7 +1,4 @@
 ---
 title: 'DQI Analysis'
-permalink: /blog/dqi-analysis/
-layout: single
+permalink: /files/dqi.html
 ---
-
-{% include_relative ../files/dqi.html %}
