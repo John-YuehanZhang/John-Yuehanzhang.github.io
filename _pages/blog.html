@@ -1,12 +1,21 @@
 ---
-layout: archive
+layout: default
 title: "Blog"
 permalink: /blog/
 author_profile: true
 ---
 
-<p>Here are my published blog posts and articles. Click on any entry to view or download the full content.</p>
+<div id="main" role="main">
+  <h1>Blog</h1>
+  <p>Here are my published blog posts and articles. Click on any entry to view the full content.</p>
 
-{% for post in site.posts reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+  {% for post in site.posts reversed %}
+    <article style="margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #ddd;">
+      <h2><a href="{{ post.file_url }}">{{ post.title }}</a></h2>
+      <p><small><strong>Published:</strong> {{ post.date | date: "%B %d, %Y" }}</small></p>
+      {% if post.excerpt %}
+        <p>{{ post.excerpt }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
