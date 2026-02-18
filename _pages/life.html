@@ -1,0 +1,26 @@
+---
+layout: archive
+title: "Life"
+permalink: /life/
+author_profile: true
+---
+
+<p>Some moments from life.</p>
+
+{% assign life_images = site.static_files | where_exp: "file", "file.path contains '/life/'" | sort: "name" | reverse %}
+
+{% if life_images.size > 0 %}
+  {% for image in life_images %}
+    {% assign ext = image.extname | downcase %}
+    {% if ext == ".jpg" or ext == ".jpeg" or ext == ".png" or ext == ".webp" or ext == ".gif" %}
+      {% assign image_url = image.path | replace: ' ', '%20' | relative_url %}
+      {% assign date_label = image.basename_without_ext | split: ' ' | first %}
+      <section style="margin-bottom: 2rem;">
+        <h3 style="margin-bottom: 0.6rem;">{{ date_label }}</h3>
+        <img src="{{ image_url }}" alt="{{ image.basename }}" style="max-width: 100%; height: auto;" />
+      </section>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  <p>No life photos yet.</p>
+{% endif %}
