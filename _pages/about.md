@@ -26,5 +26,4 @@ I am Yuehan Zhang, a bachelor's student at SCU and research assistant at HKUST(G
 
 | Degree | Institution | Years |
 |--------|-------------|-------|
-<!-- | **Visiting Student** | *The Hong Kong University of Science and Technology (GZ)* | 2025 - 2026 | -->
 | **B.Sc. in Cyber Science and Engineering** | *Sichuan University* | 2023 - 2027 |
